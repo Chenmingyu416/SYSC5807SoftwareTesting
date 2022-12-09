@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/account-1/.evosuite/.evosuite.iml" filepath="$PROJECT_DIR$/account-1/.evosuite/.evosuite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm_test/.evosuite/.evosuite1.iml" filepath="$PROJECT_DIR$/algorithm_test/.evosuite/.evosuite1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/airline/.evosuite/.evosuite2.iml" filepath="$PROJECT_DIR$/airline/.evosuite/.evosuite2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wrongLock/.evosuite/.evosuite3.iml" filepath="$PROJECT_DIR$/wrongLock/.evosuite/.evosuite3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SYSC5807SoftwareTestingCode.iml" filepath="$PROJECT_DIR$/.idea/SYSC5807SoftwareTestingCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account-1/account-1.iml" filepath="$PROJECT_DIR$/account-1/account-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/airline/airline.iml" filepath="$PROJECT_DIR$/airline/airline.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm_test/algorithm_test.iml" filepath="$PROJECT_DIR$/algorithm_test/algorithm_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm_test/test/evo/evo.iml" filepath="$PROJECT_DIR$/algorithm_test/test/evo/evo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account-1/evo_tests/evo_tests.iml" filepath="$PROJECT_DIR$/account-1/evo_tests/evo_tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wrongLock/evo_tests/evo_tests1.iml" filepath="$PROJECT_DIR$/wrongLock/evo_tests/evo_tests1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/airline/evo_tests/evo_tests2.iml" filepath="$PROJECT_DIR$/airline/evo_tests/evo_tests2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm_test/test/randoop/randoop.iml" filepath="$PROJECT_DIR$/algorithm_test/test/randoop/randoop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account-1/src_evo/src_evo.iml" filepath="$PROJECT_DIR$/account-1/src_evo/src_evo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm_test/.evosuite/tmp_2022_12_05_19_35_43/tmp_2022_12_05_19_35_43.iml" filepath="$PROJECT_DIR$/algorithm_test/.evosuite/tmp_2022_12_05_19_35_43/tmp_2022_12_05_19_35_43.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account-1/.evosuite/tmp_2022_12_08_16_43_56/tmp_2022_12_08_16_43_56.iml" filepath="$PROJECT_DIR$/account-1/.evosuite/tmp_2022_12_08_16_43_56/tmp_2022_12_08_16_43_56.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wrongLock/.evosuite/tmp_2022_12_08_17_33_34/tmp_2022_12_08_17_33_34.iml" filepath="$PROJECT_DIR$/wrongLock/.evosuite/tmp_2022_12_08_17_33_34/tmp_2022_12_08_17_33_34.iml" />
+      <module fileurl="file://$PROJECT_DIR$/airline/.evosuite/tmp_2022_12_08_18_28_37/tmp_2022_12_08_18_28_37.iml" filepath="$PROJECT_DIR$/airline/.evosuite/tmp_2022_12_08_18_28_37/tmp_2022_12_08_18_28_37.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wrongLock/wrongLock.iml" filepath="$PROJECT_DIR$/wrongLock/wrongLock.iml" />
+    </modules>
+  </component>
+</project>

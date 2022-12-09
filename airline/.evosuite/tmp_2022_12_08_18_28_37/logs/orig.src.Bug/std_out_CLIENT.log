@@ -1,0 +1,4 @@
+[MASTER] 18:30:29.291 [pool-2-thread-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: Expecting exception: RuntimeException
+[MASTER] 18:30:29.297 [pool-2-thread-1] WARN  JUnitAnalyzer - Failing test:
+ Bug bug0 = new Bug("orig.src.Bug", 0, (-1));
+

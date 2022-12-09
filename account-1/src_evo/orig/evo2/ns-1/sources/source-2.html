@@ -1,0 +1,167 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Main</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">orig.src</a>
+</div>
+
+<h1>Coverage Summary for Class: Main (orig.src)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Main</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package orig.src;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.io.*;
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;/**
+<i class="no-highlight">6</i>&nbsp; * Title:        Software Testing course
+<i class="no-highlight">7</i>&nbsp; * Description:  The goal of the exercise is implementing a  program which demonstrate  a parallel bug.
+<i class="no-highlight">8</i>&nbsp; * In the exercise we have two accounts.The program enable tranfering  money from one account to the other.Although the functions were defended by locks (synchronize) there exists an interleaving which we&#39;ll experience a bug.
+<i class="no-highlight">9</i>&nbsp; * Copyright:    Copyright (c) 2003
+<i class="no-highlight">10</i>&nbsp; * Company:      Haifa U.
+<i class="no-highlight">11</i>&nbsp; * @author Zoya Shaham and  Maya Maimon
+<i class="no-highlight">12</i>&nbsp; * @version 1.0
+<i class="no-highlight">13</i>&nbsp; */
+<i class="no-highlight">14</i>&nbsp;
+<b class="nc"><i class="no-highlight">15</i>&nbsp;public class Main {</b>
+<i class="no-highlight">16</i>&nbsp;
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;  public static void main(String[] args) {
+<i class="no-highlight">19</i>&nbsp;
+<i class="no-highlight">20</i>&nbsp;      try{
+<b class="nc"><i class="no-highlight">21</i>&nbsp;	ManageAccount.num = 5;</b>
+<b class="nc"><i class="no-highlight">22</i>&nbsp;          ManageAccount[] bank=new ManageAccount[ManageAccount.num];</b>
+<b class="nc"><i class="no-highlight">23</i>&nbsp;          String[] accountName={new String(&quot;A&quot;),new String(&quot;B&quot;),new String(&quot;C&quot;),new String(&quot;D&quot;),new String(&quot;E&quot;),</b>
+<i class="no-highlight">24</i>&nbsp;                                                       new String(&quot;F&quot;),new String(&quot;G&quot;),new String(&quot;H&quot;),new String(&quot;I&quot;),new String(&quot;J&quot;),};
+<b class="nc"><i class="no-highlight">25</i>&nbsp;          for (int j=0;j&lt;ManageAccount.num;j++){</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;              bank[j]=new ManageAccount(accountName[j],100);</b>
+<b class="nc"><i class="no-highlight">27</i>&nbsp;              ManageAccount.accounts[j].print();;//print it</b>
+<i class="no-highlight">28</i>&nbsp;              }
+<i class="no-highlight">29</i>&nbsp;
+<i class="no-highlight">30</i>&nbsp;
+<i class="no-highlight">31</i>&nbsp; //start the threads
+<b class="nc"><i class="no-highlight">32</i>&nbsp;        for (int k=0;k&lt;ManageAccount.num;k++){</b>
+<b class="nc"><i class="no-highlight">33</i>&nbsp;              bank[k].start();</b>
+<i class="no-highlight">34</i>&nbsp;              }
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp; // wait until all are finished
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        for (int k=0;k&lt;ManageAccount.num;k++){</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;              bank[k].join();</b>
+<i class="no-highlight">39</i>&nbsp;              }
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        ManageAccount.printAllAccounts();</b>
+<i class="no-highlight">41</i>&nbsp;
+<i class="no-highlight">42</i>&nbsp;        //updating the output file
+<b class="nc"><i class="no-highlight">43</i>&nbsp;        boolean bug = false;</b>
+<i class="no-highlight">44</i>&nbsp;	//flags which will indicate the kind of the bug
+<b class="nc"><i class="no-highlight">45</i>&nbsp;        for (int k=0;k&lt;ManageAccount.num;k++){</b>
+<i class="no-highlight">46</i>&nbsp;            //System.out.println(&quot;account &quot;+k+&quot; has $&quot;+ManageAccount.accounts[k].amount);
+<b class="nc"><i class="no-highlight">47</i>&nbsp;            if(ManageAccount.accounts[k].amount&lt;300){</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;                          bug=true;</b>
+<i class="no-highlight">49</i>&nbsp;                          }
+<b class="nc"><i class="no-highlight">50</i>&nbsp;            else if(ManageAccount.accounts[k].amount&gt;300){</b>
+<b class="nc"><i class="no-highlight">51</i>&nbsp;                          bug=true;</b>
+<i class="no-highlight">52</i>&nbsp;                          }
+<i class="no-highlight">53</i>&nbsp;        }
+<i class="no-highlight">54</i>&nbsp;
+<b class="nc"><i class="no-highlight">55</i>&nbsp;        if(bug) </b>
+<b class="nc"><i class="no-highlight">56</i>&nbsp;		throw new RuntimeException(&quot;bug found&quot;);</b>
+<i class="no-highlight">57</i>&nbsp;
+<b class="nc"><i class="no-highlight">58</i>&nbsp;        } catch(InterruptedException e){</b>
+<b class="nc"><i class="no-highlight">59</i>&nbsp;        }</b>
+<i class="no-highlight">60</i>&nbsp;
+<i class="no-highlight">61</i>&nbsp;  }//end of function main
+<i class="no-highlight">62</i>&nbsp;}//end of class Main
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-03 14:45</div>
+</div>
+</body>
+</html>

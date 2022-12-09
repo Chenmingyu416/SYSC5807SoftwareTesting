@@ -1,0 +1,136 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Distance</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">code.src</a>
+</div>
+
+<h1>Coverage Summary for Class: Distance (code.src)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Distance</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.9%
+  </span>
+  <span class="absValue">
+    (13/14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package code.src;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;public class Distance {
+<i class="no-highlight">4</i>&nbsp;
+<b class="nc"><i class="no-highlight">5</i>&nbsp;    public Distance() { }</b>
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;    /*
+<i class="no-highlight">8</i>&nbsp;     * Chess distance
+<i class="no-highlight">9</i>&nbsp;     */
+<i class="no-highlight">10</i>&nbsp;    public static final long chebyshevDistance(long[] point1, long[] point2) {
+<b class="fc"><i class="no-highlight">11</i>&nbsp;        long x1 = point1[0];</b>
+<b class="fc"><i class="no-highlight">12</i>&nbsp;        long y1 = point1[1];</b>
+<b class="fc"><i class="no-highlight">13</i>&nbsp;        long x2 = point2[0];</b>
+<b class="fc"><i class="no-highlight">14</i>&nbsp;        long y2 = point2[1];</b>
+<b class="fc"><i class="no-highlight">15</i>&nbsp;        return Math.max(Math.abs(x1 - x2), Math.abs(y1 - y2));</b>
+<i class="no-highlight">16</i>&nbsp;    }
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;    public static final double squaredDistance(double x1, double y1, double x2, double y2) {
+<b class="fc"><i class="no-highlight">19</i>&nbsp;        double x = x1 - x2;</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;        double y = y1 - y2;</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;        double sqr = (x * x) + (y * y);</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;        return sqr;</b>
+<i class="no-highlight">23</i>&nbsp;    }
+<i class="no-highlight">24</i>&nbsp;
+<i class="no-highlight">25</i>&nbsp;    public static final double euclideanDistance(double x1, double y1, double x2, double y2) {
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        double x = Math.pow((x1 - x2), 2);</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;        double y = Math.pow((y1 - y2), 2);</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;        double sqrt = Math.sqrt(x + y);</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        return sqrt;</b>
+<i class="no-highlight">30</i>&nbsp;    }
+<i class="no-highlight">31</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-05 19:46</div>
+</div>
+</body>
+</html>

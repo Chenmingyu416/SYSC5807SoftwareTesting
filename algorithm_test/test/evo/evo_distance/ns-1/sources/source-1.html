@@ -1,0 +1,178 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > BinarySearch</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">code.src</a>
+</div>
+
+<h1>Coverage Summary for Class: BinarySearch (code.src)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BinarySearch</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/29)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package code.src;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;/**
+<i class="no-highlight">4</i>&nbsp; * In computer science, binary search, also known as half-interval search or logarithmic search, is a search algorithm that finds the position of a target value within a sorted array. Binary search 
+<i class="no-highlight">5</i>&nbsp; * compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is 
+<i class="no-highlight">6</i>&nbsp; * successful or the remaining half is empty.
+<i class="no-highlight">7</i>&nbsp; * &lt;p&gt;
+<i class="no-highlight">8</i>&nbsp; * Worst-case performance      O(log n)&lt;br&gt;
+<i class="no-highlight">9</i>&nbsp; * Best-case performance       O(1)&lt;br&gt;
+<i class="no-highlight">10</i>&nbsp; * Average performance         O(log n)&lt;br&gt;
+<i class="no-highlight">11</i>&nbsp; * Worst-case space complexity O(1)&lt;br&gt;
+<i class="no-highlight">12</i>&nbsp; * &lt;p&gt;
+<i class="no-highlight">13</i>&nbsp; * @see &lt;a href=&quot;https://en.wikipedia.org/wiki/Binary_search_algorithm&quot;&gt;Binary Search (Wikipedia)&lt;/a&gt;
+<i class="no-highlight">14</i>&nbsp; * &lt;br&gt;
+<i class="no-highlight">15</i>&nbsp; * @author Justin Wetherell &lt;phishman3579@gmail.com&gt;
+<i class="no-highlight">16</i>&nbsp; */
+<b class="nc"><i class="no-highlight">17</i>&nbsp;public class BinarySearch {</b>
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    private static final int SWITCH_TO_BRUTE_FORCE = 200;
+<i class="no-highlight">20</i>&nbsp;
+<b class="nc"><i class="no-highlight">21</i>&nbsp;    private static int[] sorted = null;</b>
+<i class="no-highlight">22</i>&nbsp;
+<i class="no-highlight">23</i>&nbsp;    // Assuming the array is sorted
+<i class="no-highlight">24</i>&nbsp;    public static final int find(int value, int[] array, boolean optimize) {
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        BinarySearch.sorted = array;</b>
+<i class="no-highlight">26</i>&nbsp;        try {
+<b class="nc"><i class="no-highlight">27</i>&nbsp;            return recursiveFind(value, 0, BinarySearch.sorted.length - 1, optimize);</b>
+<i class="no-highlight">28</i>&nbsp;        } finally {
+<b class="nc"><i class="no-highlight">29</i>&nbsp;            BinarySearch.sorted = null;</b>
+<b class="nc"><i class="no-highlight">30</i>&nbsp;        }</b>
+<i class="no-highlight">31</i>&nbsp;    }
+<i class="no-highlight">32</i>&nbsp;    //Recursively find the element 
+<i class="no-highlight">33</i>&nbsp;    //@return find the element value by recursively
+<i class="no-highlight">34</i>&nbsp;    private static int recursiveFind(int value, int start, int end, boolean optimize) {
+<b class="nc"><i class="no-highlight">35</i>&nbsp;        if (start == end) {</b>
+<b class="nc"><i class="no-highlight">36</i>&nbsp;            int lastValue = sorted[start]; // start==end</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;            if (value == lastValue)</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;                return start; // start==end</b>
+<b class="nc"><i class="no-highlight">39</i>&nbsp;            return Integer.MAX_VALUE;</b>
+<i class="no-highlight">40</i>&nbsp;        }
+<i class="no-highlight">41</i>&nbsp;
+<b class="nc"><i class="no-highlight">42</i>&nbsp;        final int low = start;</b>
+<b class="nc"><i class="no-highlight">43</i>&nbsp;        final int high = end + 1; // zero indexed, so add one.</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;        final int middle = low + ((high - low) / 2);</b>
+<i class="no-highlight">45</i>&nbsp;
+<b class="nc"><i class="no-highlight">46</i>&nbsp;        final int middleValue = sorted[middle];</b>
+<i class="no-highlight">47</i>&nbsp;        //checks if the middle index is element
+<b class="nc"><i class="no-highlight">48</i>&nbsp;        if (value == middleValue)</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;            return middle;</b>
+<i class="no-highlight">50</i>&nbsp;        //if value is greater than move to right 
+<b class="nc"><i class="no-highlight">51</i>&nbsp;        if (value &gt; middleValue) {</b>
+<b class="nc"><i class="no-highlight">52</i>&nbsp;            if (optimize &amp;&amp; (end - middle) &lt;= SWITCH_TO_BRUTE_FORCE)</b>
+<b class="nc"><i class="no-highlight">53</i>&nbsp;                return linearSearch(value, middle + 1, end);</b>
+<b class="nc"><i class="no-highlight">54</i>&nbsp;            return recursiveFind(value, middle + 1, end, optimize);</b>
+<i class="no-highlight">55</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">56</i>&nbsp;        if (optimize &amp;&amp; (end - middle) &lt;= SWITCH_TO_BRUTE_FORCE)</b>
+<b class="nc"><i class="no-highlight">57</i>&nbsp;            return linearSearch(value, start, middle - 1);</b>
+<b class="nc"><i class="no-highlight">58</i>&nbsp;        return recursiveFind(value, start, middle - 1, optimize);</b>
+<i class="no-highlight">59</i>&nbsp;    }
+<i class="no-highlight">60</i>&nbsp;    //Linear search to find the element.
+<i class="no-highlight">61</i>&nbsp;    //@value the element we want to find.
+<i class="no-highlight">62</i>&nbsp;    //@start first index of the array in the array
+<i class="no-highlight">63</i>&nbsp;    //@end last index of the array in the array. 
+<i class="no-highlight">64</i>&nbsp;    private static final int linearSearch(int value, int start, int end) {
+<i class="no-highlight">65</i>&nbsp;        // From index i = start to i = end check if value matches sorted[i]
+<b class="nc"><i class="no-highlight">66</i>&nbsp;        for (int i = start; i &lt;= end; i++) {</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;            int iValue = sorted[i];</b>
+<b class="nc"><i class="no-highlight">68</i>&nbsp;            if (value == iValue)</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;                return i;</b>
+<i class="no-highlight">70</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">71</i>&nbsp;        return Integer.MAX_VALUE;</b>
+<i class="no-highlight">72</i>&nbsp;    }
+<i class="no-highlight">73</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-05 19:38</div>
+</div>
+</body>
+</html>

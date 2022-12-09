@@ -1,0 +1,37 @@
+Subject Name: airline
+Souce Code Language: Java
+Number of Versions: 1
+Number of Variants: 1
+   - orig
+Error expected:
+   orig: Race condition (more tickets are sold than the number available)
+Non-determinisitc: yes
+
+***orig***
+LOC: 31 (noncomment Java source code)
+Classes: 2
+Methods: 3
+Fields: 9
+Statements: 23
+wait() call: 0
+notifyAll() call: 0
+Sync blocks: 0
+Thread start() calls: 1
+New expressions: 4
+
+The parameters to the program are:  number of threads (numberThreads=10)
+and cushion (cushion=3). NOTE: both arguments must be specified although 
+default values are specified in the Main class. The number of tickets issued
+(Num_of_tickets_issued) is set to the numberThreads.
+
+This example is from a benchmark suite developed at IBM to support testing and
+analysis research. Refer to the following publications for additional 
+information:
+
+Y. Eytani, K. Havelund, S.D. Stoller, and S. Ur.  "Toward a Framework and 
+Benchmark for Testing Tools for Multi-Threaded Programs" in Concurrency and 
+Computation: Practice and Experience, 19(3): 267-279. 2006.
+
+Y. Eytani, and S. Ur. "Compiling a Benchmark of Documented Multi-threaded Bugs"
+in Proceedings of the 18th International Symposium on Parallel and Distributed 
+Processing: 266. April 2004.

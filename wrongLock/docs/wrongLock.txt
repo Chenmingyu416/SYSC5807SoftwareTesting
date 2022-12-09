@@ -1,0 +1,31 @@
+Subject Name: wrongLock
+Souce Code Language: Java
+Number of Versions: 1
+Number of Variants: 1
+   - orig
+Error expected:
+   orig: Wrong lock exception
+Non-determinisitc: yes
+
+***orig***
+LOC: 38 (noncomment Java source code)
+Classes: 4
+Methods: 10
+Fields: 6
+Statements: 28
+wait() call: 0
+notifyAll() call: 0
+Sync blocks: 2
+Thread start() calls: 2
+New expressions: 6
+
+The parameters to the program are: number of threads that have a log on data 
+(iNum1=1) and number of threads that have a (wrong) lock on the class 
+(iNum2=1). NOTE: all of the arguments must be specified although default 
+values are specified in the Main class.
+
+The wrongLock program is based on the bug patterns reported in:
+
+E. Farchi, Y. Nir, and S. Ur. "Concurrent bug patterns and how to test them."
+In Proceedings of the 9th International Conference on Computer Aided 
+Verification, June 1997.
